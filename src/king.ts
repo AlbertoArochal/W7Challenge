@@ -1,4 +1,5 @@
-import { Character } from "./character";
+import { stripVTControlCharacters } from "util";
+import { Character, Characters } from "./character";
 
 class king extends Character {
     constructor(
@@ -14,7 +15,3 @@ class king extends Character {
         this.reignDuration = reignDuration;
     }
 }
-
-let Maluma = new king(10, "Maluma", "Perez", 22, "Meneoo", "King", true);
-
-console.log(Maluma.shoutOut);
