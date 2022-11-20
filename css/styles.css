@@ -1,34 +1,34 @@
 body {
     background-color: #b9540c;
     overflow: hidden;
-  }
-  .characters-list {
+}
+.characters-list {
     flex-wrap: nowrap;
     max-width: 100%;
     min-height: 100vh;
     align-items: center;
-  }
-  .character {
+}
+.character {
     width: 20%;
     flex-basis: auto;
     flex-grow: 0;
-  }
-  .character__name {
+}
+.character__name {
     height: 60px;
-  }
-  .character__picture {
+}
+.character__picture {
     object-fit: cover;
     object-position: top;
     height: 200px;
-  }
-  .character__card {
+}
+.character__card {
     position: relative;
     border: none;
     background-color: #331c0e;
     color: #fff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  .character__overlay {
+}
+.character__overlay {
     border-radius: 0.25rem;
     position: absolute;
     padding: 25px 15px;
@@ -44,28 +44,28 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s;
-  }
-  .character:nth-child(even) .character__overlay {
+}
+.character:nth-child(even) .character__overlay {
     top: 100%;
-  }
-  .character:hover .character__overlay {
+}
+.character:hover .character__overlay {
     opacity: 1;
     pointer-events: all;
     top: 0;
-  }
-  .character__actions {
+}
+.character__actions {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 90px;
-  }
-  .character__action {
+}
+.character__action {
     background-color: #67331e;
     color: #fff;
     width: 80%;
-  }
-  .comunications {
+}
+.comunications {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -78,21 +78,21 @@ body {
     transition: all 0.3s;
     right: 100vw;
     left: -100vw;
-  }
-  .comunications.on {
+}
+.comunications.on {
     right: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 1);
-  }
-  .comunications__picture {
+}
+.comunications__picture {
     width: 70px;
     position: absolute;
     right: 10px;
     bottom: 10px;
-  }
-  .emoji {
+}
+.emoji {
     font-style: normal;
     position: absolute;
     right: 5px;
     top: 5px;
-  }
+}
