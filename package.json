@@ -1,7 +1,7 @@
 {
     "name": "Game of Thrones Challenge",
     "version": "1.0.0",
-    "description": "Semana 6 ISDI Bootcamp",
+    "description": "Semana 7 ISDI Bootcamp",
     "main": "index.js",
     "type": "module",
     "scripts": {
@@ -14,7 +14,7 @@
     "author": "Alberto Rocha",
     "license": "ISC",
     "devDependencies": {
-        "@types/jest": "^29.2.2",
+        "@types/jest": "^29.2.3",
         "@types/node": "^18.11.9",
         "@typescript-eslint/eslint-plugin": "^5.42.1",
         "@typescript-eslint/parser": "^5.42.1",
