@@ -8,8 +8,8 @@ export class Warrior extends Character implements Characters {
         motto: string = "Primero golpeo, luego pregunto",
         category: string,
         itsAlive: boolean,
-        weapon: string,
-        dextery: number
+        public weapon: string,
+        public dextery: number
     ) {
         super(name, family, age, itsAlive, motto, category);
         this.weapon = weapon;

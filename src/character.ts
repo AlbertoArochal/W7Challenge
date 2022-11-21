@@ -1,11 +1,11 @@
 export class Character {
     constructor(
-        name: string,
-        family: string,
-        age: number,
-        itsAlive: boolean = true,
-        motto: string,
-        category: string
+        public name: string,
+        public family: string,
+        public age: number,
+        public itsAlive: boolean = true,
+        public motto: string,
+        public category: string
     ) {
         this.name = name;
         this.family = family;
@@ -14,7 +14,7 @@ export class Character {
         this.motto = motto;
         this.category = category;
     }
-    shoutOut() {
+    shoutOut(): string {
         return this.motto;
     }
     toDie() {
@@ -29,6 +29,6 @@ export interface Characters {
     itsAlive: boolean;
     motto: string;
     category: string;
-    shoutOut(): string;
-    toDie(): boolean;
+    shoutOut: () => string;
+    toDie: () => void;
 }
