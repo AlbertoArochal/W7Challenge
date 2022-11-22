@@ -1,18 +1,17 @@
 export class Character {
+    public itsAlive = true;
     constructor(
         public name: string,
         public family: string,
         public age: number,
-        public itsAlive: boolean = true,
-        public motto: string,
-        public category: string
+        public category: string,
+        public motto: string
     ) {
         this.name = name;
         this.family = family;
         this.age = age;
-        this.itsAlive = itsAlive;
-        this.motto = motto;
         this.category = category;
+        this.motto = motto;
     }
     shoutOut(): string {
         return this.motto;

@@ -5,13 +5,12 @@ export class Warrior extends Character implements Characters {
         name: string,
         family: string,
         age: number,
-        motto: string = "Primero golpeo, luego pregunto",
         category: string,
-        itsAlive: boolean,
         public weapon: string,
-        public dextery: number
+        public dextery: number,
+        motto: string = "Primero golpeo, luego pregunto"
     ) {
-        super(name, family, age, itsAlive, motto, category);
+        super(name, family, age, motto, category);
         this.weapon = weapon;
         this.dextery = dextery;
     }

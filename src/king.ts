@@ -1,17 +1,16 @@
 import { stripVTControlCharacters } from "util";
 import { Character, Characters } from "./character";
 
-class king extends Character {
+export class King extends Character implements Characters {
     constructor(
-        public reignDuration: number,
         name: string,
         family: string,
         age: number,
-        itsAlive: boolean,
-        motto: string = "vais a morir todos",
-        category: string
+        category: string,
+        public reignDuration: number,
+        motto: string = "vais a morir todos"
     ) {
-        super(name, family, age, itsAlive, motto, category);
+        super(name, family, age, category, motto);
         this.reignDuration = reignDuration;
     }
 }

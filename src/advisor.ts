@@ -5,12 +5,11 @@ export class Advisor extends Character implements Characters {
         name: string,
         family: string,
         age: number,
-        itsAlive: boolean,
-        motto: string = "No se por que, pero creo que voy a morir pronto",
         category: string,
-        public lord: string
+        public lord: string,
+        motto: string = "No se por que, pero creo que voy a morir pronto"
     ) {
-        super(name, family, age, itsAlive, motto, category);
+        super(name, family, age, category, motto);
         this.lord = lord;
     }
 }

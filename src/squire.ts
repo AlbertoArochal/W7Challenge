@@ -5,13 +5,12 @@ export class Squire extends Character implements Characters {
         name: string,
         family: string,
         age: number,
-        itsAlive: boolean,
-        motto: string = "Soy un loser",
         category: string,
         public lordWarrior: string,
-        public arseLickingDex: number
+        public arseLickingDex: number,
+        motto: string = "Soy un loser"
     ) {
-        super(name, family, age, itsAlive, motto, category);
+        super(name, family, age, category, motto);
         this.lordWarrior = lordWarrior;
         this.arseLickingDex = arseLickingDex;
     }
