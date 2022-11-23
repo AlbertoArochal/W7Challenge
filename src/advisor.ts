@@ -1,4 +1,4 @@
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class Advisor extends Character implements Characters {
     constructor(

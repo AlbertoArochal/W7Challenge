@@ -1,5 +1,5 @@
 import { stripVTControlCharacters } from "util";
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class King extends Character implements Characters {
     constructor(

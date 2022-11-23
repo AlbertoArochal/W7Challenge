@@ -1,4 +1,4 @@
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class Warrior extends Character implements Characters {
     constructor(
