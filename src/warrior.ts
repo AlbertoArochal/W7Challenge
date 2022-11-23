@@ -1,17 +1,16 @@
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class Warrior extends Character implements Characters {
     constructor(
         name: string,
         family: string,
         age: number,
-        motto: string = "Primero golpeo, luego pregunto",
         category: string,
-        itsAlive: boolean,
-        weapon: string,
-        dextery: number
+        public weapon: string,
+        public dextery: number,
+        motto: string = "Primero golpeo, luego pregunto"
     ) {
-        super(name, family, age, itsAlive, motto, category);
+        super(name, family, age, motto, category);
         this.weapon = weapon;
         this.dextery = dextery;
     }

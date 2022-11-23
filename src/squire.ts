@@ -1,17 +1,16 @@
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class Squire extends Character implements Characters {
     constructor(
         name: string,
         family: string,
         age: number,
-        motto: string = "Soy un loser",
         category: string,
-        itsAlive: boolean,
-        lordWarrior: string,
-        arseLickingDex: number
+        public lordWarrior: string,
+        public arseLickingDex: number,
+        motto: string = "Soy un loser"
     ) {
-        super(name, family, age, motto, itsAlive, category);
+        super(name, family, age, category, motto);
         this.lordWarrior = lordWarrior;
         this.arseLickingDex = arseLickingDex;
     }

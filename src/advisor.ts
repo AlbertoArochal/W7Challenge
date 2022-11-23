@@ -1,17 +1,15 @@
-import { Character, Characters } from "./character";
+import { Character, Characters } from "./character.js";
 
 export class Advisor extends Character implements Characters {
     constructor(
         name: string,
         family: string,
         age: number,
-        motto: string = "No se por que, pero creo que voy a morir pronto";
         category: string,
-        itsAlive: boolean,
-        lord:string
+        public lord: string,
+        motto: string = "No se por que, pero creo que voy a morir pronto"
     ) {
-        super(name, family, age, itsAlive, motto, category)
+        super(name, family, age, category, motto);
         this.lord = lord;
-
     }
 }
