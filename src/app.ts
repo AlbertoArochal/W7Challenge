@@ -1,31 +1,88 @@
-const app = () => {
-    console.log("App");
-    const today = new Date();
-    const h1 = document.querySelector("h1");
-    if (!h1) return;
-    h1.innerHTML += `<h1> Esto es nuevo de hoy ${today.toLocaleString()} </h1>`;
-    const greetings = document.querySelector(".saludo");
-    if (!greetings) return;
-    greetings.innerHTML = `saludos compadre hoy dia ${today.toLocaleString()}`;
+import { Warrior } from "./warrior.js";
+import { Squire } from "./squire.js";
+import { Advisor } from "./advisor.js";
+import { King } from "./king.js";
 
-    const handleclick = (event: Event) => {
-        const element = event.target as HTMLElement;
-        console.log("click", element.dataset.value);
-    };
-    const nodelist = document.querySelectorAll("section button");
-    nodelist.forEach((item) => item.addEventListener("click", handleclick));
+export const Joff = new King("Joffrey", "Baratheon", 14, "King", 2);
+export const Jaime = new Warrior(
+    "Jaime",
+    "Lannister",
+    34,
+    "Warrior",
+    "Sword",
+    8
+);
+export const Daenerys = new Warrior(
+    "Daenerys",
+    "Targaryen",
+    16,
+    "Warrior",
+    "Pyromania",
+    6
+);
+export const Tyrion = new Advisor(
+    "Tyrion",
+    "Lannister",
+    27,
+    "Advisor",
+    "Daenerys"
+);
+export const Bronn = new Squire(
+    "Bronn",
+    "Stokeworth",
+    32,
+    "Squire",
+    "Jaime",
+    6
+);
 
-    const form = document.querySelector("form");
-    if (!form) return;
-    const handleForm = (event: Event) => {
-        event.preventDefault();
-        const element = event.target as HTMLFormElement;
-        const inputs = element.querySelectorAll("input");
-        const values = [...inputs].map((item) => item.value);
-        (
-            element.querySelector("output") as HTMLOutputElement
-        ).value = ` hola ${values[0]} tienes ${values[1]} anos`;
-    };
-    form.addEventListener("submit", handleForm);
+export const theGang = [Joff, Jaime, Daenerys, Tyrion, Bronn];
+
+export const listUl: HTMLElement | null = document.querySelector("ul");
+
+export const characterSheet = (char) => {
+    return `
+        <li class="character col">
+            <div class="card character__card">
+                <img
+                    src="img/${char.name}.jpg"
+                    alt="${char.name} ${char.family}"
+                    class="character__picture card-img-top"
+                />
+                <div class="card-body">
+                    <h2 class="character__name card-title h4">
+                    ${char.name} ${char.family}
+                    </h2>
+                    <div class="character__info">
+                        <ul class="list-unstyled">
+                            <li>${char.age}</li>
+                            <li>
+                                Estado:
+                                <i class="fas fa-thumbs-down"></i>
+                                <i class="fas fa-thumbs-up"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="character__overlay">
+                        <ul class="list-unstyled">
+                            <li>Años de reinado: ${char.reignDuration}</li>
+                            <li>Arma: ${char.weapon}</li>
+                            <li>Destreza: ${char.dextery}</li>
+                            <li>Peloteo: ${char.arseLickingDex}</li>
+                            <li>Asesora a: ${char.lord}</li>
+                            <li>Sirve a: ${char.lordWarrior}</li>
+                        </ul>
+                        <div class="character__actions">
+                            <button class="character__action btn">
+                                habla
+                            </button>
+                            <button class="character__action btn">
+                                muere
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <i class="emoji"></i>
+            </div>
+        </li>`;
 };
-app();
