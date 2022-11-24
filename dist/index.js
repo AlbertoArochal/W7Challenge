@@ -1,6 +1,2 @@
-import { theGang, fillChSheet, } from "./app.js";
-/*document.addEventListener("DOMContentLoaded", () => {
-    const slots = document.querySelectorAll("slot");
-    slots.forEach((item, i) => (item.outerHTML = characterSheet(theGang[i])));
-});*/
+import { theGang, fillChSheet } from "./app.js";
 theGang.forEach((char) => fillChSheet(char));
