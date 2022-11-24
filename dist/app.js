@@ -81,4 +81,13 @@ export const fillChSheet = (char) => {
     line.className = "character col";
     line.innerHTML = characterSheet(char);
     unorderedL?.appendChild(line);
+    const buttonTalk = () => {
+        const buttonTalk = document.querySelector("button");
+        if (!buttonTalk)
+            return;
+        buttonTalk.addEventListener("click", () => {
+            console.log(`${char.motto}`);
+        });
+    };
+    buttonTalk();
 };

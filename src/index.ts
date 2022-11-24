@@ -8,6 +8,7 @@ import {
     theGang,
     characterSheet,
     fillChSheet,
+    buttonTalk,
 } from "./app.js";
 
 /*document.addEventListener("DOMContentLoaded", () => {
@@ -16,3 +17,4 @@ import {
 });*/
 
 theGang.forEach((char) => fillChSheet(char));
+buttonTalk();
