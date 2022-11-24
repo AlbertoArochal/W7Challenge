@@ -2,42 +2,12 @@ import { Warrior } from "./warrior.js";
 import { Squire } from "./squire.js";
 import { Advisor } from "./advisor.js";
 import { King } from "./king.js";
-
 export const Joff = new King("Joffrey", "Baratheon", 14, "King", 2);
-export const Jaime = new Warrior(
-    "Jaime",
-    "Lannister",
-    34,
-    "Warrior",
-    "Sword",
-    8
-);
-export const Daenerys = new Warrior(
-    "Daenerys",
-    "Targaryen",
-    16,
-    "Warrior",
-    "Pyromania",
-    6
-);
-export const Tyrion = new Advisor(
-    "Tyrion",
-    "Lannister",
-    27,
-    "Advisor",
-    "Daenerys"
-);
-export const Bronn = new Squire(
-    "Bronn",
-    "Stokeworth",
-    32,
-    "Squire",
-    "Jaime",
-    6
-);
-
+export const Jaime = new Warrior("Jaime", "Lannister", 34, "Warrior", "Sword", 8);
+export const Daenerys = new Warrior("Daenerys", "Targaryen", 16, "Warrior", "Pyromania", 6);
+export const Tyrion = new Advisor("Tyrion", "Lannister", 27, "Advisor", "Daenerys");
+export const Bronn = new Squire("Bronn", "Stokeworth", 32, "Squire", "Jaime", 6);
 export const theGang = [Joff, Jaime, Daenerys, Tyrion, Bronn];
-
 const specialSpecs = (char) => {
     switch (true) {
         case char instanceof King:
@@ -52,9 +22,7 @@ const specialSpecs = (char) => {
             return `<li>Asesora a: ${char.lord}</li>`;
     }
 };
-
 const unorderedL = document.querySelector("ul");
-
 const emojier = (char) => {
     if (char.category === "King") {
         return "👑";
@@ -69,7 +37,6 @@ const emojier = (char) => {
         return "🎓";
     }
 };
-
 export const characterSheet = (char) => {
     return `
             <div class="card character__card">
@@ -109,7 +76,6 @@ export const characterSheet = (char) => {
                 <i class="emoji">${emojier(char)}</i>
             </div>`;
 };
-
 export const fillChSheet = (char) => {
     const line = document.createElement("li");
     line.className = "character col";
