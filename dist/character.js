@@ -18,7 +18,6 @@ export class Character {
         this.motto = motto;
     }
     shoutOut(motto) {
-        console.log(motto);
         return motto;
     }
     toDie() {
