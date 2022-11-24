@@ -8,6 +8,7 @@ import {
     theGang,
     listUl,
     characterSheet,
+    shoutMotto,
 } from "./app.js";
 
 document.addEventListener("DOMContentLoaded", () => {

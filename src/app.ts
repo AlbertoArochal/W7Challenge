@@ -38,7 +38,20 @@ export const Bronn = new Squire(
 
 export const theGang = [Joff, Jaime, Daenerys, Tyrion, Bronn];
 
-export const listUl: HTMLElement | null = document.querySelector("ul");
+const specialSpecs = (char) => {
+    switch (true) {
+        case char instanceof King:
+            return `<li>Años de reinado: ${char.reignDuration}</li>`;
+        case char instanceof Squire:
+            return `<li>Peloteo: ${char.arseLickingDex}</li>
+        <li>Sirve a: ${char.lordWarrior}</li>`;
+        case char instanceof Warrior:
+            return `<li>Arma: ${char.weapon}</li>
+            <li>Destreza: ${char.dextery}</li>`;
+        case char instanceof Advisor:
+            return `<li>Asesora a: ${char.lord}</li>`;
+    }
+};
 
 export const characterSheet = (char) => {
     return `
@@ -65,12 +78,7 @@ export const characterSheet = (char) => {
                     </div>
                     <div class="character__overlay">
                         <ul class="list-unstyled">
-                            <li>Años de reinado: ${char.reignDuration}</li>
-                            <li>Arma: ${char.weapon}</li>
-                            <li>Destreza: ${char.dextery}</li>
-                            <li>Peloteo: ${char.arseLickingDex}</li>
-                            <li>Asesora a: ${char.lord}</li>
-                            <li>Sirve a: ${char.lordWarrior}</li>
+                        ${specialSpecs(char)}
                         </ul>
                         <div class="character__actions">
                             <button class="character__action btn">
@@ -86,3 +94,10 @@ export const characterSheet = (char) => {
             </div>
         </li>`;
 };
+
+const showMotto = document.querySelector("comunications");
+const shoutButton = document.querySelector("shout");
+shoutButton?.addEventListener("click", function () {
+    showMotto.classList.add("comunications.on");
+    showMotto.classList.remove("comunications");
+});
