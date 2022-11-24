@@ -1,3 +1,5 @@
+![Alt text](./img/jofrey-header.webp?raw=true "Title")
+
 ## # Week 3 - Challenge 1
 
 # GoT DOM
