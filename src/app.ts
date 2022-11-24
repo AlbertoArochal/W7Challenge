@@ -53,6 +53,21 @@ const specialSpecs = (char) => {
     }
 };
 
+const emojier = (char) => {
+    if (char.category === "King") {
+        return "👑";
+    }
+    if (char.category === "Squire") {
+        return "🛡";
+    }
+    if (char instanceof Warrior) {
+        return "🗡";
+    }
+    if (char.category === "Advisor") {
+        return "🎓";
+    }
+};
+
 export const characterSheet = (char) => {
     return `
         <li class="character col">
@@ -90,7 +105,7 @@ export const characterSheet = (char) => {
                         </div>
                     </div>
                 </div>
-                <i class="emoji"></i>
+                <i class="emoji">${emojier(char)}</i>
             </div>
         </li>`;
 };
