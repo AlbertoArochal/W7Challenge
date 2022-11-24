@@ -6,12 +6,13 @@ import {
     Tyrion,
     Bronn,
     theGang,
-    listUl,
     characterSheet,
-    shoutMotto,
+    fillChSheet,
 } from "./app.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const slots = document.querySelectorAll("slot");
     slots.forEach((item, i) => (item.outerHTML = characterSheet(theGang[i])));
-});
+});*/
+
+theGang.forEach((char) => fillChSheet(char));

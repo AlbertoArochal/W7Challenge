@@ -53,6 +53,8 @@ const specialSpecs = (char) => {
     }
 };
 
+const unorderedL = document.querySelector("ul");
+
 const emojier = (char) => {
     if (char.category === "King") {
         return "👑";
@@ -70,7 +72,6 @@ const emojier = (char) => {
 
 export const characterSheet = (char) => {
     return `
-        <li class="character col">
             <div class="card character__card">
                 <img
                     src="img/${char.name}.jpg"
@@ -106,13 +107,20 @@ export const characterSheet = (char) => {
                     </div>
                 </div>
                 <i class="emoji">${emojier(char)}</i>
-            </div>
-        </li>`;
+            </div>`;
 };
 
-const showMotto = document.querySelector("comunications");
-const shoutButton = document.querySelector("shout");
-shoutButton?.addEventListener("click", function () {
-    showMotto.classList.add("comunications.on");
-    showMotto.classList.remove("comunications");
-});
+export const fillChSheet = (char) => {
+    const line = document.createElement("li");
+    line.className = "character col";
+    line.innerHTML = characterSheet(char);
+    unorderedL?.appendChild(line);
+    const shoutOutBtn = document.querySelector(`#comunicate${char.name}`);
+    shoutOutBtn?.addEventListener("click", () => {
+        char.shoutOut(char.motto);
+    });
+    const toDieBtn = document.querySelector(`#die${char.name}`);
+    toDieBtn?.addEventListener("click", () => {
+        char.toDie();
+    });
+};
