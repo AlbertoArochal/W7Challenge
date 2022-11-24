@@ -13,10 +13,12 @@ export class Character {
         this.category = category;
         this.motto = motto;
     }
-    shoutOut(): string {
-        return this.motto;
+    shoutOut(motto: string): string {
+        console.log(motto);
+        return motto;
     }
     toDie() {
+        console.log("ay!");
         this.itsAlive = false;
     }
 }
